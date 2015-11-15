@@ -1,7 +1,9 @@
 # turtlesim_reactive_robot
 
-Simple reactive robot using ROS and Turtlesim.
+Simple reactive robot using ROS and STDR_Simulator.
 Developed for a Robotics course.
+
+Looking for turtlesim? Well we were going to use it but ended up with STDR. We kept the name, tho. Let it go.
 
 
 ### Installation intructions:
@@ -24,7 +26,6 @@ catkin_make
 
 * Open a terminal for each of the following commands:
 ```
-roscore
-rosrun turtlesim turtlesim_node
-rosrun turtlesim_reactive_robot robot_wander_node
+roslaunch stdr_launchers server_with_map_and_gui_plus_robot.launch
+rosrun turtlesim_reactive_robot robot_wanderer_node robot0 laser_0
 ```
