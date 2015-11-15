@@ -11,10 +11,13 @@ Developed for a Robotics course.
 ```
 cd ~/catkin_ws/src
 catkin_create_pkg turtlesim_reactive_robot
+```
+* Clone or copy the source files to this folder
+* Build the package with the following commands:
+```
 cd ~/catkin_ws
 catkin_make
 ```
-* Clone the source file to this folder
 
 
 ### To run the software
@@ -23,6 +26,5 @@ catkin_make
 ```
 roscore
 rosrun turtlesim turtlesim_node
-rosrun turtlseim_reactive_robot robot_reactive_robot_node
+rosrun turtlesim_reactive_robot robot_wander_node
 ```
-

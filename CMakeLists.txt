@@ -7,7 +7,13 @@ project(turtlesim_reactive_robot)
 find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  geometry_msgs
+  message_generation
+)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -98,7 +104,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES turtlesim_reactive_robot
-#  CATKIN_DEPENDS other_catkin_pkg
+CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -122,6 +128,7 @@ catkin_package(
 
 ## Declare a C++ executable
 # add_executable(turtlesim_reactive_robot_node src/turtlesim_reactive_robot_node.cpp)
+add_executable(robot_wanderer_node src/robot_wanderer.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -131,6 +138,8 @@ catkin_package(
 # target_link_libraries(turtlesim_reactive_robot_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(robot_wanderer_node ${catkin_LIBRARIES})
+add_dependencies(robot_wanderer_node beginner_tutorials_gencpp)
 
 #############
 ## Install ##
